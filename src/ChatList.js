@@ -4,7 +4,8 @@ class ChatList extends Component {
   render () {
     const messages = this.props.messageList;
     return (
-        <ol className="chatList">
+      <div className="chatList">
+        <ol>
           <li className="chatbot__text">Chatbot: Enjoy chatting!</li>
           {
             messages.map(function(message, idx){
@@ -14,6 +15,7 @@ class ChatList extends Component {
             })
           }
         </ol>
+      </div>
     )
   }
 }

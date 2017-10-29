@@ -21,8 +21,8 @@ server.listen(3000);
 io.on('connection', socket => {
   socket.on('message', data => {
     const newMsg = {
-      from: data.user,
-      body: data.message
+      username: data.username,
+      body: data.body
     };
     console.log(newMsg);
     io.emit('message', newMsg);

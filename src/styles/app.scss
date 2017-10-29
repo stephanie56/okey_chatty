@@ -1,6 +1,7 @@
 $app_background-color: #f0f0f0;
 $app_font-color: #303030;
 $app_width: 450px;
+$app_height: 300px;
 $app_font-size: 0.9em;
 
 $chatbot_font-color: #ee4e7a;
@@ -35,6 +36,14 @@ ol {
 }
 
 .chatList {
+  height: $app_height;
+  overflow-x: none;
+  overflow-y: auto;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+  bottom: 0;
+
+
   li {
     border-radius: 6px;
     list-style: none;
