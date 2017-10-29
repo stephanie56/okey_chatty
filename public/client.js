@@ -13,7 +13,7 @@ chatForm.addEventListener('submit', function(e){
   const newText = `${user || 'Anonymous'}: ${text}`;
   socket.emit('message', newText);
   message.value = "";
-})
+});
 
 socket.on('message', function(msg){
   let chatItem = document.createElement('li');
