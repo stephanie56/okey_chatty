@@ -9,12 +9,32 @@ const css = require('./styles/app.scss');
 
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      messageList: []
+    }
+
+    this.submitMsg = this.submitMsg.bind(this);
+
+  }
+
+  submitMsg(obj){
+    this.setState({
+      messageList: [...this.state.messageList, obj]
+    });
+  }
+
   render () {
     return (
       <div className="app">
         <h1 className="app__title">Okey Chatty !!!</h1>
-        <ChatList />
-        <ChatForm />
+        <ChatList
+          messageList={this.state.messageList}
+        />
+        <ChatForm
+          submitMsg={this.submitMsg}
+        />
       </div>
     )
   }
