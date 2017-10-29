@@ -18,10 +18,10 @@ app.use(bodyParser.urlencoded( {extend: false} ));
 server.listen(3000);
 
 // when a user is connected to the socket server
-// io.on('connection', newConnection);
-//
-// function newConnection(socket){
-//   socket.on('message', function(data){
-//     io.emit('message', data);
-//   });
-// }
+io.on('connection', newConnection);
+
+function newConnection(socket){
+  socket.on('message', function(data){
+    io.emit('message', data);
+  });
+}

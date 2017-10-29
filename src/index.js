@@ -5,12 +5,14 @@ import io from 'socket.io-client';
 import ChatList from './ChatList';
 import ChatForm from './ChatForm';
 
+const css = require('./styles/app.scss');
+
 
 class App extends Component {
   render () {
     return (
       <div className="app">
-        <h1 className="app__title">Okey Chatty</h1>
+        <h1 className="app__title">Okey Chatty !!!</h1>
         <ChatList />
         <ChatForm />
       </div>
