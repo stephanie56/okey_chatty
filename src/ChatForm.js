@@ -18,7 +18,7 @@ class ChatForm extends Component {
     const username = this.state.username;
     const body = this.state.body;
     const newMsg = {
-      username,
+      username: username || 'Anonymous',
       body
     }
     this.props.submitMsg(newMsg);
