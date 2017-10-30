@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(webpackDevMiddleware(webpack(webpackConfig)));
 app.use(bodyParser.urlencoded( {extend: false} ));
 
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
 
 // when a user is connected to the socket server
 io.on('connection', socket => {
