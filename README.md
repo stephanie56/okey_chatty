@@ -8,4 +8,4 @@ A minimal chat application built with ReactJS and socket.io.
 3. Start local server on port 3000 `node server.js`
 
 ## Demo
-https://aqueous-earth-51125.herokuapp.com/
+https://okay-chatty.herokuapp.com/
