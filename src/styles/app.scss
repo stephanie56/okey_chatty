@@ -40,18 +40,33 @@ ol {
   overflow-x: none;
   overflow-y: auto;
   border-bottom: 1px solid #e0e0e0;
+  width: 100%;
   position: relative;
-  bottom: 0;
 
+  ol {
+    border: 1px solid black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 
   li {
     border-radius: 6px;
     list-style: none;
     padding: 10px;
+
+    span {
+      display: block;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      border: red solid 1px;
+    }
   }
   li:nth-child(odd) {
     background-color: #e3e3e3;
   }
+
   .chatbot__text {
     color: $chatbot_font-color;
     font-weight: lighter;

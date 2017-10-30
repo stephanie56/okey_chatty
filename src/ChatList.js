@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 class ChatList extends Component {
+
+
+
   render () {
     const messages = this.props.messageList;
     return (
@@ -11,7 +14,7 @@ class ChatList extends Component {
             messages.map(function(message, idx){
               const username = message.username;
               const body = message.body;
-              return (<li key={idx} className="user__text">{username}: {body}</li>)
+              return (<li key={idx} className="user__text"><span>{username}: {body}</span></li>)
             })
           }
         </ol>
