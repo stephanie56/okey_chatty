@@ -1,14 +1,13 @@
 {
-  "name": "sockets",
+  "name": "okey_chatty",
   "version": "1.0.0",
-  "description": "",
+  "description": "A chat application built with ReactJS and socket.io.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Stephanie Zeng",
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.26.0",
