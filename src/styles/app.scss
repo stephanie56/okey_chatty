@@ -43,10 +43,12 @@ ol {
   width: 100%;
   position: relative;
 
-  ol {
-    border: 1px solid black;
-    position: absolute;
+  .pinToBottom {
     bottom: 0;
+  }
+
+  ol {
+    position: absolute;
     left: 0;
     right: 0;
   }
@@ -60,7 +62,6 @@ ol {
       display: block;
       max-width: 100%;
       overflow-wrap: break-word;
-      border: red solid 1px;
     }
   }
   li:nth-child(odd) {

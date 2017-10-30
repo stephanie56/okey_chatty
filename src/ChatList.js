@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 class ChatList extends Component {
 
+  constructor(props){
+    super(props);
+    this.state={
+      isScrollMaxed: false
+    }
+  }
 
+  componentDidUpdate(){
+    const scroll_clientHeight = 300;
+    if(this.chatlist.scrollHeight - scroll_clientHeight > 0 && this.state.isScrollMaxed !== true){
+      this.setState({
+        isScrollMaxed: true
+      });
+    }
+  }
 
   render () {
     const messages = this.props.messageList;
+    const listClass = this.state.isScrollMaxed ? 'pinToBottom' : null;
+
     return (
       <div className="chatList">
-        <ol>
-          <li className="chatbot__text">Chatbot: Enjoy chatting!</li>
+        <ol className={ listClass } ref={node => this.chatlist = node} >
+          <li className="chatbot__text"><span>Chatbot: Enjoy chatting!</span></li>
           {
             messages.map(function(message, idx){
               const username = message.username;
