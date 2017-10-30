@@ -1,0 +1,110 @@
+$app_background-color: #f0f0f0;
+$app_font-color: #303030;
+$app_width: 450px;
+$app_height: 300px;
+$app_font-size: 0.9em;
+
+$chatbot_font-color: #ee4e7a;
+$user_font-color: #333333;
+
+
+body {
+  background-color: #fff;
+  color: $app_font-color;
+  font-family: 'Helvetica', Arial, sans-serif;
+  margin: 20px;
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+.app {
+  background-color: $app_background-color;
+  margin: 20px auto;
+  max-width: $app_width;
+  padding: 20px;
+  box-shadow: 8px 8px 10px #d3d3d3;
+
+  &__title {
+    text-align: center;
+    color: #333333;
+    font-size: 1.8em;
+    font-weight: lighter;
+  }
+}
+
+.chatList {
+  height: $app_height;
+  overflow-x: none;
+  overflow-y: auto;
+  border-bottom: 1px solid #e0e0e0;
+  width: 100%;
+  position: relative;
+
+  .pinToBottom {
+    bottom: 0;
+  }
+
+  ol {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  li {
+    border-radius: 6px;
+    list-style: none;
+    padding: 10px;
+
+    span {
+      display: block;
+      max-width: 100%;
+      overflow-wrap: break-word;
+    }
+  }
+  li:nth-child(odd) {
+    background-color: #e3e3e3;
+  }
+
+  .chatbot__text {
+    color: $chatbot_font-color;
+    font-weight: lighter;
+  }
+  .user__text {
+    color: $user_font-color;
+    font-weight: lighter;
+  }
+}
+
+.chatForm {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #B0C4DE;
+  border-radius: 6px;
+
+  #username {
+    width: 16%;
+  }
+
+  #message {
+    width: 62%;
+  }
+
+  input[type="text"] {
+    padding: 4px;
+    border-color: transparent;
+    border-radius: 4px;
+    margin-right: 4px;
+    font-size: $app_font-size;
+  }
+  input[type="submit"] {
+    background-color: #6495ED;
+    color: white;
+    border-color: transparent;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: $app_font-size;
+  }
+}

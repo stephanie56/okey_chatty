@@ -1,27 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
     <title>Okey Chatty</title>
-    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1 class="app__title">Okey Chatty</h1>
-    <main>
-      <!-- message history box -->
-      <ol id="history">
-        <!-- a list of messages -->
-        <li class="chatbot__text">Chatbot: Don't bee shy. Enjoy chatting! ;)</li>
-      </ol>
+    <div id="root"></div>
 
-      <!-- Chat Form -->
-      <form>
-        <input id="username" placeholder="Name">
-        <input id="message" placeholder="Message">
-        <button>Send</button>
-      </form>
-    </main>
-
-    <!-- Script files -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
-    <script src="client.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
