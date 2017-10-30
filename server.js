@@ -19,6 +19,7 @@ server.listen(3000);
 
 // when a user is connected to the socket server
 io.on('connection', socket => {
+  console.log('a user just join...');
   socket.on('message', data => {
     const newMsg = {
       username: data.username,

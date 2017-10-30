@@ -16,19 +16,31 @@ class App extends Component {
     }
 
     this.submitMsg = this.submitMsg.bind(this);
+  }
 
+  componentDidMount(){
+    const that = this;
+    this.socket = io('/');
+    this.socket.on('message', function(message){
+      console.log('updated a message', message);
+      let lastIdx = that.state.messageList.length - 1;
+      if(message !== that.state.messageList[lastIdx]){
+        that.setState({
+          messageList: [...that.state.messageList, message]
+        });
+      }
+    })
   }
 
   submitMsg(obj){
-    this.setState({
-      messageList: [...this.state.messageList, obj]
-    });
+    this.socket.emit('message', obj);
+    console.log(this.state.messageList);
   }
 
   render () {
     return (
       <div className="app">
-        <h1 className="app__title">Okey Chatty !!!</h1>
+        <h1 className="app__title">Okey Chatty</h1>
         <ChatList
           messageList={this.state.messageList}
         />
