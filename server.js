@@ -21,11 +21,6 @@ server.listen(process.env.PORT || 3000);
 io.on('connection', socket => {
   console.log('a user just join...');
   socket.on('message', data => {
-    const newMsg = {
-      username: data.username,
-      body: data.body
-    };
-    console.log(newMsg);
-    io.emit('message', newMsg);
+    io.emit('message', data);
   });
 });
