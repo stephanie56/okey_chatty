@@ -1,7 +1,7 @@
 import firebase from 'firebase';
 
 const config = {
-  apiKey: process.env.FIREBASE_API_KEY,
+  apiKey: "AIzaSyAc8_9ijZyxsAyGzhcBR3feWuDxgLYePSU",
   authDomain: "okay-chatty-4369e.firebaseapp.com",
   databaseURL: "https://okay-chatty-4369e.firebaseio.com",
   projectId: "okay-chatty-4369e",
