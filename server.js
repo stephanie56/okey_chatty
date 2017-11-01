@@ -1,7 +1,10 @@
+require('dotenv').config();
+
 const http = require('http');
 const bodyParser = require('body-parser');
 const express = require('express');
 const socketIo = require('socket.io');
+
 
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
