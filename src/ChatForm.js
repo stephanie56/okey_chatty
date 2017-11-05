@@ -8,41 +8,42 @@ class ChatForm extends Component {
       body: ""
     }
 
-    this._handleNameInput = this._handleNameInput.bind(this);
-    this._handleBodyInput = this._handleBodyInput.bind(this);
+    this._handleInput = this._handleInput.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
   }
 
   _handleSubmit(e){
     e.preventDefault();
-    const username = this.state.username;
-    const body = this.state.body;
+    const {username, body} = this.state;
     const newMsg = {
       username: username || 'Anonymous',
       body
     }
-    this.props.submitMsg(newMsg);
+    if(newMsg.body !== ""){
+      this.props.submitMsg(newMsg);
+      this.setState({
+        body:""
+      });
+    }
+    else{
+      console.log('chatbot: cannot post empty content');
+    }
   }
 
-  _handleNameInput(e){
-    // console.log(e.target.value);
+  _handleInput(e){
+    // console.log(e.target.name);
+    const propName = e.target.name;
     this.setState({
-      username: e.target.value
+      [propName]: e.target.value
     });
   }
 
-  _handleBodyInput(e){
-    // console.log(e.target.value);
-    this.setState({
-      body: e.target.value
-    });
-  }
 
   render () {
     return (
       <form className="chatForm" onSubmit={this._handleSubmit}>
-        <input type="text" name="username" placeholder="Name" onChange={this._handleNameInput} />
-        <input type="text" name="message" placeholder="Message" onChange={this._handleBodyInput}/>
+        <input type="text" name="username" placeholder="Name" value={this.state.username} onChange={this._handleInput} />
+        <input type="text" name="body" placeholder="Message" value={this.state.body} onChange={this._handleInput}/>
         <input type="submit" value="Send"/>
       </form>
     )
