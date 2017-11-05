@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import io from 'socket.io-client';
 
 import firebaseData from './firebase';
@@ -7,6 +9,10 @@ const msgRef = firebaseData.ref('messages');
 
 import ChatList from './ChatList';
 import ChatForm from './ChatForm';
+
+const Header = () => {
+  return (<h1 className="app__title">Okey Chatty</h1>);
+}
 
 class App extends Component {
   constructor(props){
@@ -62,7 +68,7 @@ class App extends Component {
   render () {
     return (
       <div className="app">
-        <h1 className="app__title">Okey Chatty</h1>
+        <Header />
         <ChatList
           messageList={this.state.messageList}
         />
@@ -75,3 +81,7 @@ class App extends Component {
 }
 
 export default App;
+
+ChatList.propTypes = {
+  messageList: PropTypes.array
+}
