@@ -12,12 +12,36 @@ body {
   background-color: #fff;
   color: $app_font-color;
   font-family: 'Helvetica', Arial, sans-serif;
-  margin: 20px;
+  padding: 0;
+  margin: 0;
 }
 
 ol {
   padding: 0;
   margin: 0;
+}
+
+.splash {
+  color: #fff;
+  background-color: #8fd4d9;
+  padding-top: 15%;
+  height: 100vh;
+  width: 100vw;
+
+  &__title{
+    margin: 0;
+    text-align: center;
+    font-size: 3em;
+    font-weight: normal;
+  }
+
+  &__input{
+    display: block;
+    width: 50%;
+    margin: 30px auto;
+    padding: 0.2em;
+    font-size: 3em;
+  }
 }
 
 .app {

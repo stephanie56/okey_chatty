@@ -16,7 +16,7 @@ class ChatForm extends Component {
     e.preventDefault();
     const {username, body} = this.state;
     const newMsg = {
-      username: username || 'Anonymous',
+      username,
       body
     }
     if(newMsg.body !== ""){
