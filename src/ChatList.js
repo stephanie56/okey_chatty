@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+
+const UserChatItem = (props) => {
+  const {id, username, body} = props;
+  return(
+    <li key={id} className="user__text"><span>{username}: {body}</span></li>
+  )
+}
 
 class ChatList extends Component {
-
   constructor(props){
     super(props);
     this.state={
@@ -20,7 +27,7 @@ class ChatList extends Component {
   }
 
   render () {
-    const messages = this.props.messageList;
+    const {messageList} = this.props;
     const listClass = this.state.isScrollMaxed ? 'pinToBottom' : null;
 
     return (
@@ -28,10 +35,14 @@ class ChatList extends Component {
         <ol className={ listClass } ref={node => this.chatlist = node} >
           <li className="chatbot__text"><span>Chatbot: Enjoy chatting!</span></li>
           {
-            messages.map(function(message, idx){
-              const username = message.username;
-              const body = message.body;
-              return (<li key={idx} className="user__text"><span>{username}: {body}</span></li>)
+            messageList.map(function(message, idx){
+              return (
+                <UserChatItem
+                  key = {idx}
+                  id = {idx}
+                  username = {message.username}
+                  body = {message.body}
+                />)
             })
           }
         </ol>
@@ -41,3 +52,9 @@ class ChatList extends Component {
 }
 
 export default ChatList;
+
+UserChatItem.propTypes = {
+  id: PropTypes.number,
+  username: PropTypes.string,
+  body: PropTypes.string
+}

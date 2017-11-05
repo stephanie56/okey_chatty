@@ -16,9 +16,9 @@ const io = socketIo(server);
 
 app.use(express.static(__dirname + '/public'));
 app.use(webpackDevMiddleware(webpack(webpackConfig)));
-app.use(bodyParser.urlencoded( {extend: false} ));
+app.use(bodyParser.json());
 
-server.listen(process.env.PORT || 3000);
+server.listen(process.env.PORT || 8080);
 
 // when a user is connected to the socket server
 io.on('connection', socket => {
